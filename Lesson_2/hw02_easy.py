@@ -13,14 +13,42 @@
 
 # Подсказка: воспользоваться методом .format()
 # с помощью числа определяем ширину поля слева
+fruits = ["яблоко", "банан", "киви", "арбуз"]
+i = 1
+max_len = 0
+for fruit in fruits:
+    if len(fruit) > max_len:
+        max_len = len(fruit)
 
+for fruit in fruits:
+    razn = max_len - len(fruit)
+    spaces = " " * razn
+    print("{}.{}{}".format(i,spaces,fruit))
+    i += 1
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
+fruits1 = ["яблоко", "апельсин", "киви", "арбуз"]
+fruits2 = ["яблоко", "банан", "апельсин", "груша"]
 
-
+for fruit2 in fruits2:
+    i = 0
+    for fruit1 in fruits1:
+        if fruit1 == fruit2:
+            fruits1.pop(i)
+        i += 1
+print(fruits1)
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
+numbers = [1, 3, 6, 9, 13, 21, 8]
+new_numbers = []
+for number in numbers:
+    if number % 2 == 0:
+        new_number = number / 4
+    else:
+        new_number = number * 2
+    new_numbers.append(new_number)
+print(new_numbers)
